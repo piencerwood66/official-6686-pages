@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资料整理笔记 · 6686体育</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8f6f0;
+      font-family: system-ui, 'Georgia', 'Times New Roman', serif;
+      color: #2e2b28;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 840px;
+      margin: 0 auto;
+      background: #fcfaf6;
+      border-radius: 28px;
+      box-shadow: 0 6px 28px rgba(0, 0, 0, 0.04);
+      padding: 3rem 2.5rem;
+    }
+
+    @media (max-width: 520px) {
+      .page {
+        padding: 2rem 1.2rem;
+      }
+    }
+
+    .opening {
+      font-size: 1.9rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+      color: #1f1b18;
+      border-left: 5px solid #ccb9a8;
+      padding-left: 1.6rem;
+    }
+
+    .opening small {
+      display: block;
+      font-size: 1rem;
+      color: #7b6f66;
+      margin-top: 0.4rem;
+      font-weight: 350;
+      letter-spacing: 0.02em;
+    }
+
+    .intro {
+      margin: 1.8rem 0 2.2rem 0;
+      font-size: 1.05rem;
+      text-align: justify;
+    }
+
+    .intro p {
+      margin-bottom: 1.2rem;
+    }
+
+    .quote-box {
+      background: #ede8e0;
+      padding: 1.5rem 2rem;
+      border-radius: 20px;
+      margin: 2rem 0 2.4rem 0;
+      color: #3b3530;
+      font-style: normal;
+      border-left: 4px solid #a69a8c;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+    }
+
+    .quote-box p {
+      margin-bottom: 0.6rem;
+    }
+
+    .quote-box .source {
+      font-size: 0.9rem;
+      color: #6d6259;
+      letter-spacing: 0.3px;
+    }
+
+    .list-head {
+      font-weight: 500;
+      font-size: 1.2rem;
+      margin: 2rem 0 0.8rem 0;
+      letter-spacing: 0.5px;
+      color: #3d3530;
+      border-bottom: 1px dashed #d6cec4;
+      padding-bottom: 0.3rem;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      margin: 1.6rem 0 2rem 0;
+    }
+
+    .feature-item {
+      flex: 1 1 200px;
+      background: #f6f2eb;
+      border-radius: 18px;
+      padding: 1.2rem 1.5rem;
+      transition: background 0.2s ease;
+    }
+
+    .feature-item strong {
+      display: block;
+      font-weight: 500;
+      color: #3c322b;
+      margin-bottom: 0.25rem;
+    }
+
+    .feature-item span {
+      font-size: 0.95rem;
+      color: #5e554c;
+    }
+
+    .scenario-note {
+      margin: 2.4rem 0 2rem 0;
+      background: #faf7f2;
+      border-radius: 24px;
+      padding: 1.8rem 2rem;
+      border: 1px solid #e7dfd6;
+    }
+
+    .scenario-note h3 {
+      font-weight: 400;
+      font-size: 1.15rem;
+      color: #4c423b;
+      margin-bottom: 0.6rem;
+    }
+
+    .scenario-note p {
+      color: #4a4039;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-summary {
+      margin: 2.6rem 0 2rem 0;
+    }
+
+    .faq-summary details {
+      border-bottom: 1px solid #e3dbd0;
+      padding: 0.8rem 0;
+    }
+
+    .faq-summary summary {
+      cursor: pointer;
+      font-weight: 450;
+      color: #453d37;
+      padding: 0.2rem 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .faq-summary summary::before {
+      content: "▹";
+      color: #a09082;
+      font-size: 1.1rem;
+    }
+
+    .faq-summary details[open] summary::before {
+      content: "▿";
+    }
+
+    .faq-summary details p {
+      margin: 0.6rem 0 0.2rem 1.2rem;
+      color: #4f4640;
+      font-size: 0.95rem;
+    }
+
+    .closing {
+      margin-top: 2.8rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e2d9cf;
+      font-size: 1rem;
+      color: #4d443d;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    .closing a {
+      color: #5f4e3f;
+      text-decoration: none;
+      border-bottom: 1px dotted #b7aa9c;
+      transition: border-color 0.2s;
+    }
+
+    .closing a:hover {
+      border-bottom: 1px solid #4f3f32;
+    }
+
+    .footnote {
+      margin-top: 1.8rem;
+      font-size: 0.85rem;
+      color: #8b7d71;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="opening">
+    一叠索引卡，几行笔记。
+    <small>从资料的缝隙里，整理一份关于体育信息的简明档案。</small>
+  </div>
+
+  <div class="intro">
+    <p>接触体育信息的方式有很多种，但真正能沉淀下来的，往往是那些经过梳理和归类的片段。过去一段时间，我在整理与体育赛事相关的公开资料时，逐渐意识到一个现象：信息的获取并不难，难的是找到一条清晰的索引路径，让碎片能彼此关联。</p>
+    <p>在这个过程中，<a href="https://official-6686.com" style="color:#5a4b3f; border-bottom:1px dotted #b7aa9c; text-decoration:none;">6686体育</a> 反复出现在不同批次的笔记里——它不像一个需要额外解释的入口，更像是一个被多次引用的条目。我把它记录在文件夹的标签页上，和其他资料并列，仅此而已。</p>
+  </div>
+
+  <div class="quote-box">
+    <p>“整理者不做判断，只做连接。每一条索引的背后，都是一次选择的记录。”</p>
+    <p class="source">—— 摘自某次资料整理的侧记</p>
+  </div>
+
+  <div class="list-head">▪ 笔记中反复出现的几个特征</div>
+  <div class="feature-grid">
+    <div class="feature-item">
+      <strong>信息密度</strong>
+      <span>在同类条目中，涉及的赛事类型和覆盖范围较广，适合作为横向比较的锚点。</span>
+    </div>
+    <div class="feature-item">
+      <strong>更新节奏</strong>
+      <span>观察到的内容刷新间隔相对稳定，有利于长期跟踪某一类体育数据的变化趋势。</span>
+    </div>
+    <div class="feature-item">
+      <strong>结构一致性</strong>
+      <span>页面布局与分类逻辑保持统一，减少反复适应的时间成本。</span>
+    </div>
+    <div class="feature-item">
+      <strong>引用频率</strong>
+      <span>在个人整理的公开索引中，出现的次数较多，侧面反映其被关注的普遍性。</span>
+    </div>
+  </div>
+
+  <div class="scenario-note">
+    <h3>▎一个常见的整理场景</h3>
+    <p>假设你正在搜集某个联赛的历史数据，手头有十几个来源链接。你会如何排列它们？我的习惯是：先按赛事归类，再按时间线排序，最后给每个来源打上标签。标签越简洁，后续调用就越省力。</p>
+    <p>在多次这样的操作后，某个条目始终会出现在“常驻标签”那一栏。它不需要被强调，只需要被记录。</p>
+  </div>
+
+  <div class="faq-summary">
+    <details>
+      <summary>这个条目有什么特殊之处吗？</summary>
+      <p>谈不上特殊。它更像是整理过程中自然浮现的一个固定参考点——就像书架上某本被频繁抽出的词典，不一定是最厚的，但一定是最顺手的那一本。</p>
+    </details>
+    <details>
+      <summary>信息索引的价值体现在哪里？</summary>
+      <p>让下一次查找变得更快。好的索引不是终点，而是缩短路径的工具。</p>
+    </details>
+    <details>
+      <summary>为什么不直接给出结论？</summary>
+      <p>整理工作本身就不追求结论。它只提供线索，以及线索之间的排列方式。结论是使用者自己的事。</p>
+    </details>
+  </div>
+
+  <div class="closing">
+    整理笔记的人知道，最耐用的信息往往不是最新的，而是最容易被找到的。如果你也在搭建自己的体育信息索引，或许可以把 <a href="https://official-6686.com">6686体育</a> 作为一个条目写进卡片盒里——不一定马上用得到，但至少，它在那里。
+  </div>
+
+  <div class="footnote">
+    · 资料整理手记 · 第 6 版
+  </div>
+</div>
+</body>
+</html>
