@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>信息收藏 · 世界杯</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, 'Times New Roman', Times, serif;
+      background-color: #f9f7f2;
+      color: #2b2b2b;
+      line-height: 1.7;
+      padding: 2rem 1.5rem 3rem;
+    }
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* 主视觉 —— 米色纹理下的静谧标识 */
+    .hero {
+      margin-bottom: 2.4rem;
+      border-left: 6px solid #cfb991;
+      padding-left: 1.4rem;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 450;
+      letter-spacing: 1px;
+      color: #2e2a24;
+      line-height: 1.2;
+    }
+    .hero .note {
+      margin-top: 0.6rem;
+      font-size: 0.95rem;
+      color: #706b63;
+      border-top: 1px dashed #d9cfbc;
+      padding-top: 0.5rem;
+    }
+
+    /* 用途卡片 —— 三列并排，米白底 */
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 2rem 0 2.4rem;
+    }
+    .card-item {
+      flex: 1 1 180px;
+      background-color: #fcfaf7;
+      border: 1px solid #e5ddd0;
+      border-radius: 12px;
+      padding: 1.4rem 1.2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      transition: box-shadow 0.2s;
+    }
+    .card-item:hover {
+      box-shadow: 0 4px 12px rgba(190, 170, 140, 0.12);
+    }
+    .card-item h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #4b423a;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid #ece4d8;
+      padding-bottom: 0.3rem;
+    }
+    .card-item p {
+      font-size: 0.9rem;
+      color: #5a534b;
+    }
+
+    /* 适合人群 —— 两列概括 */
+    .audience {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0 1.8rem;
+    }
+    .audience-item {
+      flex: 1 1 160px;
+      background: #f4efe7;
+      padding: 0.9rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      color: #3c3730;
+      border: 1px solid #e3d9ca;
+    }
+
+    /* 引用块 / 提示框 */
+    .inset {
+      background: #ede7db;
+      border-left: 5px solid #b8a58b;
+      padding: 1.3rem 1.6rem;
+      border-radius: 0 14px 14px 0;
+      margin: 2rem 0 2.2rem;
+      font-size: 0.95rem;
+      color: #3c362d;
+    }
+    .inset strong {
+      color: #3d3429;
+    }
+
+    /* 自然链接段落 */
+    .link-paragraph {
+      background: #f7f3ea;
+      padding: 1.6rem 1.8rem;
+      border-radius: 18px;
+      margin: 2rem 0 1.6rem;
+      border: 1px solid #e5dbca;
+    }
+    .link-paragraph a {
+      color: #7a5f3e;
+      text-decoration: underline wavy #cfb78e 1px;
+      text-underline-offset: 4px;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .link-paragraph a:hover {
+      color: #3f3326;
+      text-decoration-color: #a98862;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      margin: 2rem 0 0.8rem;
+      border-top: 1px solid #dad0be;
+      padding-top: 1.8rem;
+    }
+    .faq-item {
+      margin-bottom: 0.9rem;
+    }
+    .faq-q {
+      font-weight: 500;
+      color: #3f3730;
+      margin-bottom: 0.2rem;
+    }
+    .faq-a {
+      font-size: 0.9rem;
+      color: #565047;
+      padding-left: 0.8rem;
+      border-left: 2px solid #d3c6b1;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd2bf;
+      margin: 2rem 0 1.2rem;
+    }
+
+    .footer-note {
+      font-size: 0.8rem;
+      color: #8c8479;
+      margin-top: 2.2rem;
+      text-align: right;
+    }
+
+    @media (max-width: 540px) {
+      body { padding: 1.5rem 1rem; }
+      .hero h1 { font-size: 2rem; }
+      .card-item { flex: 1 1 100%; }
+      .audience-item { flex: 1 1 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 主视觉 -->
+  <div class="hero">
+    <h1>再访 · 收藏 · 持续</h1>
+    <div class="note">一份关于赛事信息与记录习惯的索引卡片 / 2026</div>
+  </div>
+
+  <!-- 用途卡片 -->
+  <div class="card-grid">
+    <div class="card-item">
+      <h3>标记位置</h3>
+      <p>将赛事信息集中保留，每次重新打开时不会丢失上次浏览的上下文。</p>
+    </div>
+    <div class="card-item">
+      <h3>轻量备忘</h3>
+      <p>不依赖推送，适合在安静时刻自己翻阅、核对赛程或回顾。</p>
+    </div>
+    <div class="card-item">
+      <h3>延续关注</h3>
+      <p>页面结构稳定，适合作为长期的兴趣入口，不定期回来看看。</p>
+    </div>
+  </div>
+
+  <!-- 适合人群 -->
+  <div class="audience">
+    <div class="audience-item">⚽ 习惯收藏页面的读者</div>
+    <div class="audience-item">📌 偏好静态信息结构的人</div>
+    <div class="audience-item">📅 希望记录观看历程的球迷</div>
+    <div class="audience-item">🔖 会定期回顾书签的用户</div>
+  </div>
+
+  <!-- 提示框 / 引用块 -->
+  <div class="inset">
+    <strong>一个观察：</strong> 当页面成为日常访问的落脚点，信息的重复浏览会自然沉淀为一种熟悉感。比起不断搜索，收藏一个固定的起点往往更安静、更可靠。
+  </div>
+
+  <!-- 自然链接段落（必须包含 <a> 且可见文本 = "世界杯"） -->
+  <div class="link-paragraph">
+    <p>如果你在寻找一个可以反复回来的信息基点，这个与<a href="https://hub-official-fifa2026.com">世界杯</a>相关的页面保持了简洁的索引结构。它适合被加入书签，也适合在赛季前后打开，当作一份安静的参照。</p>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-summary">
+    <div class="faq-item">
+      <div class="faq-q">— 这个页面会频繁更新吗？</div>
+      <div class="faq-a">内容结构基本固定，不会频繁改动；适合作为长期访问的收藏页。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">— 为什么强调“再次访问”？</div>
+      <div class="faq-a">许多信息页面只被浏览一次，而这个设计希望鼓励有间隔的、从容的回顾。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">— 移动端显示是否友好？</div>
+      <div class="faq-a">卡片和段落会自适应宽度，在较小屏幕上依然保持可读的节奏。</div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="footer-note">
+    · 信息卡片式 · 收藏导向 ·
+  </div>
+</div>
+</body>
+</html>
