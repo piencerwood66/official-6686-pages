@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hub Main FIFA2026 · 世界杯信息站</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fce8c8 0%, #fbd9b0 40%, #fac69a 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.25rem;
+      line-height: 1.6;
+      color: #2e241e;
+    }
+
+    .page-wrapper {
+      max-width: 1080px;
+      width: 100%;
+    }
+
+    /* 主视觉 – 暖色卡片群 */
+    .hero-card {
+      background: #fffaf3;
+      border-radius: 32px;
+      padding: 2rem 2.2rem 2.4rem;
+      box-shadow: 0 12px 28px rgba(160, 100, 60, 0.15), 0 4px 12px rgba(0,0,0,0.04);
+      margin-bottom: 2rem;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .hero-card h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #6b3f2a;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .hero-card h1 small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #9a7b64;
+      background: #f3e3d4;
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      letter-spacing: 0;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: #5d4a3a;
+      margin: 0.25rem 0 1rem 0;
+      border-left: 4px solid #dcb28b;
+      padding-left: 1rem;
+      background: #fcf3ea;
+      border-radius: 0 12px 12px 0;
+      max-width: 90%;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: #3f3229;
+      margin-top: 0.6rem;
+      padding: 0.8rem 1rem;
+      background: #f9efe6;
+      border-radius: 20px;
+    }
+
+    .hero-desc a {
+      color: #9d5f3a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 2px solid #e5cbb6;
+      transition: border-color 0.15s;
+    }
+
+    .hero-desc a:hover {
+      border-bottom-color: #b07b58;
+    }
+
+    /* 网格卡片布局 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .info-card {
+      background: #fffcf7;
+      border-radius: 28px;
+      padding: 1.6rem 1.5rem 1.8rem;
+      box-shadow: 0 6px 18px rgba(140, 90, 55, 0.08);
+      transition: transform 0.1s ease, box-shadow 0.2s;
+      border: 1px solid rgba(235, 199, 167, 0.3);
+    }
+
+    .info-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(150, 90, 50, 0.12);
+    }
+
+    .info-card h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #6b3f2a;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .info-card h2 i {
+      font-style: normal;
+      background: #efd9c4;
+      padding: 0 8px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+    }
+
+    .info-card p, .info-card li {
+      font-size: 0.98rem;
+      color: #3e3027;
+    }
+
+    .info-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.4rem;
+    }
+
+    .info-card ul li {
+      padding: 0.35rem 0 0.35rem 1.4rem;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="%23b87d5a"><circle cx="12" cy="12" r="6"/></svg>') left center no-repeat;
+      background-size: 10px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.6rem;
+      margin-top: 0.6rem;
+    }
+
+    .tag {
+      background: #efddcf;
+      padding: 0.15rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #543c2c;
+    }
+
+    .card-full {
+      background: #fffcf7;
+      border-radius: 28px;
+      padding: 1.6rem 1.8rem;
+      box-shadow: 0 6px 18px rgba(140, 90, 55, 0.08);
+      margin-bottom: 1.8rem;
+      border: 1px solid rgba(235, 199, 167, 0.25);
+    }
+
+    .card-full h2 {
+      font-size: 1.3rem;
+      color: #6b3f2a;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-full p {
+      font-size: 0.98rem;
+      color: #3e3027;
+      margin-bottom: 0.75rem;
+    }
+
+    .link-sentence {
+      background: #fcf3ea;
+      padding: 0.8rem 1.2rem;
+      border-radius: 40px;
+      display: inline-block;
+      margin-top: 0.3rem;
+      font-size: 0.98rem;
+    }
+
+    .link-sentence a {
+      color: #9d5f3a;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 2px solid #dcb9a2;
+      transition: border-color 0.15s;
+    }
+
+    .link-sentence a:hover {
+      border-bottom-color: #b07b58;
+    }
+
+    .faq-mini {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem 1.5rem;
+      margin-top: 0.6rem;
+    }
+
+    .faq-item {
+      background: #f7ede2;
+      padding: 0.6rem 1rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+    }
+
+    .faq-item strong {
+      color: #6b3f2a;
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #7b614e;
+      margin-top: 2rem;
+      padding: 1rem 0.5rem;
+      border-top: 1px solid #e4cdbb;
+    }
+
+    /* 响应式 */
+    @media (max-width: 700px) {
+      body {
+        padding: 1.2rem 1rem;
+      }
+
+      .hero-card {
+        padding: 1.4rem 1.2rem;
+      }
+
+      .hero-card h1 {
+        font-size: 1.8rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .faq-mini {
+        grid-template-columns: 1fr;
+      }
+
+      .info-card {
+        padding: 1.2rem;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .hero-card h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero-sub {
+        font-size: 0.95rem;
+      }
+
+      .link-sentence {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- 主视觉卡片 -->
+  <div class="hero-card">
+    <h1>
+      ⚽ Hub Main FIFA2026
+      <small>信息聚合</small>
+    </h1>
+    <div class="hero-sub">
+      与世界杯相关的内容整理、赛事背景与实用参考
+    </div>
+    <div class="hero-desc">
+      这里围绕 <a href="https://hub-main-fifa2026.com">世界杯</a> 做了一些基本信息汇聚，方便快速了解 2026 年美加墨赛事的场馆、赛程和看点。站点本身属于介绍性质，内容来自公开资料整理，不涉及任何官方授权或商业运营。
+    </div>
+  </div>
+
+  <!-- 双卡片网格：用途 + 适合人群 -->
+  <div class="card-grid">
+    <!-- 用途卡片 -->
+    <div class="info-card">
+      <h2>📋 站点用途 <i>实用</i></h2>
+      <p>帮你梳理世界杯相关的背景信息，包括但不限于：</p>
+      <ul>
+        <li>主办城市与体育场概览</li>
+        <li>参赛队伍及资格赛简讯</li>
+        <li>历届世界杯冷知识</li>
+        <li>票务与观赛提醒（仅转载）</li>
+      </ul>
+      <div class="tag-list">
+        <span class="tag">赛程</span>
+        <span class="tag">场馆</span>
+        <span class="tag">纪录</span>
+        <span class="tag">国家</span>
+      </div>
+    </div>
+
+    <!-- 适合人群卡片 -->
+    <div class="info-card">
+      <h2>👥 适合谁看 <i>轻松</i></h2>
+      <ul>
+        <li>对世界杯感兴趣的普通球迷</li>
+        <li>想快速了解 2026 年世界杯概况的朋友</li>
+        <li>收集赛事资料的学生或内容创作者</li>
+        <li>喜欢通过简单卡片了解足球文化的人</li>
+      </ul>
+      <p style="margin-top: 0.6rem; color: #7a5e4a; font-size: 0.9rem;">
+        不需要注册，也没有弹窗广告，就是干干净净的阅读页面。
+      </p>
+    </div>
+  </div>
+
+  <!-- 自然链接段落 + 可信说明 -->
+  <div class="card-full">
+    <h2>🔗 关于这个站点与可信说明</h2>
+    <p>
+      <strong>Hub Main FIFA2026</strong> 是一个个人兴趣向的内容页，所有关于 <a href="https://hub-main-fifa2026.com" style="color:#9d5f3a; font-weight:600; border-bottom:2px solid #dcb9a2; text-decoration:none;">世界杯</a> 的信息都来自国际足联公开资料、维基百科以及主流体育媒体。站点不会索取任何个人信息，也不包含任何商业推广或跳转链接。
+    </p>
+    <p>
+      如果你正在找一份 2026 年世界杯的基础信息清单，或者想回顾一下历届赛事的经典瞬间，这个页面或许能帮上一点小忙。内容会随着官方消息不定期更新，但请以 FIFA 官方渠道为准。
+    </p>
+    <div class="link-sentence">
+      ⚡ 如果你感兴趣，可以直接去 <a href="https://hub-main-fifa2026.com">世界杯</a> 页面看看。
+    </div>
+  </div>
+
+  <!-- FAQ 摘要卡片 -->
+  <div class="card-full" style="padding-bottom: 1.4rem;">
+    <h2>❓ 常见疑问（摘要）</h2>
+    <div class="faq-mini">
+      <div class="faq-item">
+        <strong>页面会实时更新吗？</strong>
+        重要节点（抽签、赛程公布）会及时调整，但不像新闻站那样每日刷新。
+      </div>
+      <div class="faq-item">
+        <strong>有版权风险吗？</strong>
+        所有内容均为引用摘要与事实陈述，不使用官方图片或视频。
+      </div>
+      <div class="faq-item">
+        <strong>可以转载吗？</strong>
+        欢迎分享链接，但请注明信息来源。不建议直接复制整站内容。
+      </div>
+      <div class="faq-item">
+        <strong>和 FIFA 官方什么关系？</strong>
+        纯粹的信息整理站，与 FIFA、2026 世界杯组委会无任何隶属关系。
+      </div>
+    </div>
+  </div>
+
+  <!-- 收尾 -->
+  <div class="footer-note">
+    ⚽ 一个关于世界杯的安静角落 · 数据更新至 2025 年初
+  </div>
+
+</div>
+</body>
+</html>
